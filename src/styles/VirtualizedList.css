@@ -1,0 +1,19 @@
+.body-virtualized-list {
+  grid-column: 1 / 5;
+  grid-row: 3 / 5;
+  padding: var(--regular-padding);
+}
+
+.virtualized-list-main {
+  width: 100%;
+  height: 100%;
+  box-shadow: var(--regular-shadow);
+  padding: var(--regular-padding);
+  border-radius: 24px;
+}
+
+@media (min-width: 1024px) {
+  .body-virtualized-list {
+    grid-column: 1 / 4;
+  }
+}

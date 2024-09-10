@@ -1,0 +1,30 @@
+.body-information {
+  grid-column: 1 / 5;
+  grid-row: 1;
+  padding: var(--regular-padding);
+}
+
+.body-information-main {
+  border-radius: 24px;
+  background-image: url(../assets/information-bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 1.6rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  color: white;
+  box-shadow: var(--regular-shadow);
+  height: 100%;
+  width: 100%;
+}
+
+.body-information-text {
+  grid-column: 2 / 5;
+}
+
+@media (min-width: 1024px) {
+  .body-information {
+    grid-column: 1 / 4;
+  }
+}

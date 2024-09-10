@@ -1,0 +1,12 @@
+.body-stats {
+  grid-column: 1 / 5;
+  grid-row: 5;
+  padding: var(--regular-padding);
+}
+
+@media (min-width: 1024px) {
+  .body-stats {
+    grid-column: 4 / 5;
+    grid-row: 1 / 5;
+  }
+}

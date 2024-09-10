@@ -13,20 +13,76 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --background-color: #f4f7fa;
+  --primary-color: #1e1e1e;
+  --accent-color: #3498db;
+  --success-color: #2ecc71;
+  --warning-color: #f1c40f;
+  --error-color: #e74c3c;
+  --text-primary: #333333;
+  --text-secondary: #7f8c8d;
+
+  --regular-padding: 1rem;
+
+  --regular-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+main {
+  display: grid;
+  grid-template-columns: 6fr;
+  background-color: var(--background-color);
+}
+
+aside {
+  padding: 0.5rem;
+  height: 100vh;
+  color: white;
+  position: sticky;
+  top: 0;
+  display: none;
+}
+
+aside div {
+  background-color: var(--primary-color);
+  border-radius: 24px;
+  height: 100%;
+  padding: var(--regular-padding);
+  box-shadow: var(--regular-shadow);
 }
 
 header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--regular-padding);
+}
+
+header h1 span {
+  display: none;
+}
+
+.main-section {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  padding: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
 }
 
-.customButton {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
+@media (min-width: 1024px) {
+  main {
+    grid-template-columns: 250px 6fr;
+  }
 
-.customButton:disabled {
-  cursor: auto;
+  aside {
+    display: block;
+  }
+
+  header h1 span {
+    display: inline-block;
+  }
+
+  .main-section {
+    grid-template-rows: repeat(4, 1fr);
+  }
 }

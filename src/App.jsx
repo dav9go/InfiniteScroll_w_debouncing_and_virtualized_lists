@@ -1,43 +1,29 @@
 //Components
-import FullList from "./components/FullList";
-import InfiniteScroll from "./components/InfiniteScroll";
-import InfiniteDebounced from "./components/InfiniteDebounced";
-import InfiniteVirtualized from "./components/InfiniteVirtualized";
-import InfiniteVirtualizedAndDebounced from "./components/InfiniteVirtualizedAndDebounced";
-import HeaderButton from "./components/customItems/HeaderButton";
-//Hooks
-import { useState, createElement } from "react";
+import BodyInformation from "./components/BodyInformation";
+import BodyStats from "./components/BodyStats";
+import InfoBlocks from "./components/InfoBlocks";
+import VirtualizedList from "./components/VirtualizedList";
 
 function App() {
-  const [approach, setApproach] = useState(0);
-
-  const COMPONENTS = [
-    { component: FullList, text: "Full List" },
-    { component: InfiniteScroll, text: "Infinite Scroll" },
-    { component: InfiniteDebounced, text: "Infinite Debounced" },
-    { component: InfiniteVirtualized, text: "Infinite Virtualized" },
-    {
-      component: InfiniteVirtualizedAndDebounced,
-      text: "Infinite Virtualized & Debounced",
-    },
-  ];
-
   return (
-    <>
-      <header>
-        {COMPONENTS.map((item, index) => (
-          <HeaderButton
-            key={item.id}
-            text={item.text}
-            setter={() => setApproach(index)}
-            selected={approach === index}
-          />
-        ))}
-      </header>
-      <div className="layout">
-        {createElement(COMPONENTS[approach].component)}
+    <main>
+      <aside>
+        <div>hola</div>
+      </aside>
+      <div className="not-aside-content">
+        <header>
+          <h1>
+            Virtualized List <span>Dashboard Playground</span>
+          </h1>
+        </header>
+        <section className="main-section">
+          <BodyInformation />
+          <BodyStats />
+          <InfoBlocks />
+          <VirtualizedList />
+        </section>
       </div>
-    </>
+    </main>
   );
 }
 
